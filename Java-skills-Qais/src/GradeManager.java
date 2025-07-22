@@ -1,4 +1,4 @@
-public class GradeManager {
+/*public class GradeManager {
     private String _name;
 
     public String GradeManager(String name){
@@ -13,3 +13,4 @@ public class GradeManager {
         return reversedNames;
     }
 }
+*/
