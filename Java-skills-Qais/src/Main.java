@@ -26,5 +26,6 @@ public class Main {
     PayrollCalculator employee1 = new PayrollCalculator("FULL_TIME",50,40);
     System.out.println(employee1.calculateWeeklyPay());
 
+    System.out.println(employee1.calculateTaxDeduction(1400,true));
     }
 }
