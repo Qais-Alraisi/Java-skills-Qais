@@ -54,38 +54,6 @@ public class PayrollCalculator {
         }
     }
 
-    void set_employeeType(String employeeType) {
-        if (employeeType.equals("FULL_TIME") || employeeType.equals("PART_TIME") || employeeType.equals("CONTRACTOR") || employeeType.equals("INTERN")) {
-            _employeeType = employeeType;
-        } else {
-            System.out.println("Invalid employee type");
-        }
-    }
-
-    void set_hoursWorked(double hoursWorked) {
-        _hoursWorked = hoursWorked;
-    }
-
-    void set_hourlyRate(double hourlyRate) {
-        _hourlyRate = hourlyRate;
-    }
-
-    String get_employeeType() {
-        return _employeeType;
-    }
-
-    double get_hoursWorked() {
-        return _hoursWorked;
-    }
-
-    double get_hourlyRate() {
-        return _hourlyRate;
-    }
-
-    public enum employeeType {
-        FULL_TIME, PART_TIME, CONTRACTOR, INTERN
-    }
-
     double weeklyPay;
 
     public double calculateWeeklyPay() {
@@ -136,7 +104,21 @@ public class PayrollCalculator {
         }
         return tax;
     }
+
+    public static void processPayroll(String[] employeeTypes, double[] Hours, double[] Rates, String[] Names){
+        PayrollCalculator[] payrolls = new PayrollCalculator[employeeTypes.length];
+        for (int i =0; i < employeeTypes.length; i++){
+            payrolls[i] = new PayrollCalculator(employeeTypes[i],Hours[i],Rates[i]);
+            System.out.println("Employee: " + Names[i]);
+            System.out.println("Type: " + employeeTypes[i]);
+            System.out.println("Hours Worked: " + Hours[i]);
+            System.out.println("Rate: " + Rates[i]);
+            System.out.println("Pay: " + payrolls[i].calculateWeeklyPay());
+            System.out.println("__________________________");
+        }
+    }
 }
+
 
 
 
