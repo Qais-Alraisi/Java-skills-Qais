@@ -1,4 +1,3 @@
-public class UserInfo {
     public class UserInfo {
 
         private String _name;
@@ -52,4 +51,3 @@ public class UserInfo {
             System.out.println("isActive: "+isActive());
         }
     }
-}
