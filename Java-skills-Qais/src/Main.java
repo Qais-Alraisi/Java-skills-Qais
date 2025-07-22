@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         UserInfo user1 = new UserInfo("Qais",19,"qais.h.alraisi@gmail.com",true);
         UserInfo user2 = new UserInfo("Qassim",18,"qassim@gmail.com",false);
@@ -20,5 +20,11 @@ public class Main {
         System.out.println(user1.isActive());
 
 
-             }
+             }*/
+
+    public static void main(String[] args) {
+    PayrollCalculator employee1 = new PayrollCalculator("FULL_TIME",50,40);
+    System.out.println(employee1.calculateWeeklyPay());
+
     }
+}
