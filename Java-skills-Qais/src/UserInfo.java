@@ -23,6 +23,7 @@ public class UserInfo {
         return _email;
     }
 
+
     boolean isActive() {
         return _isActive;
     }
@@ -48,6 +49,6 @@ public class UserInfo {
         System.out.println("Age: "+getAge());
         System.out.println("Email: "+getEmail());
         System.out.println("isActive: "+isActive());
-        
     }
 }
+
