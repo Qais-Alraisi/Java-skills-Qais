@@ -6,5 +6,13 @@ public class Main {
 
     String text = "John";
     System.out.println(GradeManager.reverseStudentNames(text));
-             }
+
+    String[] students = {"Alice","Bob","Charlie","Diana"};
+    int[] scores = {95,67,45,78};
+    String[] failingStudents = GradeManager.findFailingStudents(students, scores);
+
+    for (int i = 0; i < failingStudents.length; i++) {
+        System.out.println(failingStudents[i] + " Has failed!");
     }
+    }
+}
