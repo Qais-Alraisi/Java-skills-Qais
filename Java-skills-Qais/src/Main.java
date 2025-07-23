@@ -1,13 +1,18 @@
 public class Main {
     public static void main(String[] args) {
         String sentence = "Java is fun and Java is powerful";
-    System.out.println(TextProcessor.countWords(sentence));
+    System.out.println("the sentence " + sentence + " has "+ TextProcessor.countWords(sentence)+ " words");
     System.out.println(TextProcessor.replaceWord(sentence,"Java","programming"));
 
     String text = "John";
-    System.out.println(GradeManager.reverseStudentNames(text));
+    System.out.println(text + " reversed is: "+GradeManager.reverseStudentNames(text));
 
-    String[] students = {"Alice","Bob","Charlie","Diana"};
+    System.out.println("The letter grade for 45 is: " + GradeManager.getLetterGrade(45));
+    System.out.println("The letter grade for 79 is: " + GradeManager.getLetterGrade(79));
+
+
+
+        String[] students = {"Alice","Bob","Charlie","Diana"};
     int[] scores = {95,67,45,78};
     String[] failingStudents = GradeManager.findFailingStudents(students, scores);
 
