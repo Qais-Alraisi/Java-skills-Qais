@@ -9,5 +9,8 @@ public class Main {
                 "VIP"));
         System.out.println("The most expensive item is: "+ShoppingCart.findMostExpensive(cart));
         System.out.println("The number of items in cart over 30$ are: "+ShoppingCart.countExpensiveItems(cart,30));
+
+        PatternMaker.printNumberTriangle(5);
+        PatternMaker.printMultiplicationTable(7,10);
     }
 }
