@@ -29,6 +29,8 @@ public class Main {
         String[] names = {"Alice", "Bob", "Charlie", "Diana", "Eve"};
 
     PayrollCalculator.processPayroll(types, hours, rates, names);
+    System.out.println(PayrollCalculator.calculateTaxDeduction(600,true));
+        System.out.println(PayrollCalculator.calculateTaxDeduction(1200,false));
 
     }
 }

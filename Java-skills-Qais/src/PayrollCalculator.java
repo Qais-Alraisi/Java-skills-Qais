@@ -12,6 +12,7 @@ public class PayrollCalculator {
         }
         switch (employeeType) {
             case "FULL_TIME":
+            case "CONTRACTOR":
                 if (hoursWorked >= 0 && hourlyRate >= 0) {
                     _hoursWorked = hoursWorked;
                     _hourlyRate = hourlyRate;
@@ -27,14 +28,6 @@ public class PayrollCalculator {
                     } else {
                         _hoursWorked = hoursWorked;
                     }
-                } else {
-                    System.out.println("Invalid value for hours worked or hourly rate");
-                }
-                break;
-            case "CONTRACTOR":
-                if (hoursWorked >= 0 && hourlyRate >= 0) {
-                    _hoursWorked = hoursWorked;
-                    _hourlyRate = hourlyRate;
                 } else {
                     System.out.println("Invalid value for hours worked or hourly rate");
                 }
@@ -77,7 +70,7 @@ public class PayrollCalculator {
         return weeklyPay;
     }
 
-    public double calculateTaxDeduction(double grossPay, boolean hasHealthInsurance) {
+    public static double calculateTaxDeduction(double grossPay, boolean hasHealthInsurance) {
         double tax = 0;
         if (grossPay < 0) {
             System.out.println("Invalid gross pay");
@@ -116,7 +109,48 @@ public class PayrollCalculator {
             System.out.println("Pay: " + payrolls[i].calculateWeeklyPay());
             System.out.println("__________________________");
         }
+
+        int highestPaidIndex = 0;
+        int lowestPaidIndex = 0;
+        double lowestPaid = payrolls[0].calculateWeeklyPay();
+        double highestPaid = payrolls[0].calculateWeeklyPay();
+
+        for (int i =0; i < payrolls.length; i++){
+            double pay =  payrolls[i].calculateWeeklyPay();
+            if (pay > highestPaid){
+                highestPaid = pay;
+                highestPaidIndex = i;
+            }
+        }
+        System.out.println("Highest Paid: " + Names[highestPaidIndex]);
+
+        for (int i =0; i < payrolls.length; i++){
+            double pay =  payrolls[i].calculateWeeklyPay();
+            if (pay < lowestPaid){
+                lowestPaid = pay;
+                lowestPaidIndex = i;
+            }
+        }
+        System.out.println("Lowest Paid: " + Names[lowestPaidIndex]);
+
+        double total=0;
+        for (int i =0; i < payrolls.length; i++){
+            total += payrolls[i].calculateWeeklyPay();
+        }
+        System.out.println("Average Paid: "+ total/payrolls.length);
+
+        int overtimeCount = 0;
+        for (int i =0; i < payrolls.length; i++){
+            if (employeeTypes[i].equals("FULL_TIME") && Hours[i]>40){
+                overtimeCount++;
+            }
+        }
+        System.out.println("Overtime count: " + overtimeCount);
     }
+
+
+
+
 }
 
 
