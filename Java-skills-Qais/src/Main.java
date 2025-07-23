@@ -13,6 +13,18 @@ public class Main {
 
         System.out.println(book1.getPages());
 
+        System.out.println("___________________________");
+//task 4.2
+        VisitorCounter visitor1 = new VisitorCounter("Qais");
+        VisitorCounter visitor2 = new VisitorCounter("Qassim");
+
+        visitor1.recordVisit();
+        visitor2.recordVisit();
+
+        VisitorCounter.displayTotalVisitors();
+
 
     }
+
+
 }
