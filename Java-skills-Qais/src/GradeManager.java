@@ -1,7 +1,7 @@
 public class GradeManager {
 
     public static String reverseStudentNames(String name) {
-        String[] nameArray = name.split("");
+        String[] nameArray = name.split(""); //split name into characters and add to array
         String reversedName = "";
         for (int i = nameArray.length - 1; i >= 0; i--) {
             reversedName += nameArray[i];
@@ -19,7 +19,7 @@ public class GradeManager {
         else if(score >= 70 && score <= 79){
             return 'C';
         }
-        else if(score >= 60 && score <= 59){
+        else if(score >= 60 && score <= 69){
             return 'D';
         }
         else{
@@ -29,7 +29,7 @@ public class GradeManager {
 
     public static String[] findFailingStudents(String[] names, int[]scores){
         int numFailingStudents = 0;
-        for (int i = 0; i < names.length; i++) {
+        for (int i = 0; i < names.length; i++) { //find length of array
             if (scores[i] < 60) {
                 numFailingStudents++;
             }
