@@ -1,16 +1,16 @@
-/*public class GradeManager {
+public class GradeManager {
     private String _name;
 
-    public String GradeManager(String name){
+    public String GradeManager(String name) {
         return _name;
     }
 
-    public static String[] reverseStudentNames (String[] names){
-        String[] reversedNames = new String[names.length];
-        for(int i=0; i<names.length();i++){
-            reversedNames[i] = names[-i];
+    public static String reverseStudentNames(String name) {
+        String[] nameArray = name.split("");
+        String reversedName = "";
+        for (int i = nameArray.length - 1; i >= 0; i--) {
+            reversedName += nameArray[i];
         }
-        return reversedNames;
+        return reversedName;
     }
 }
-*/

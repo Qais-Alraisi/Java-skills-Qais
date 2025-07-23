@@ -3,5 +3,8 @@ public class Main {
         String sentence = "Java is fun and Java is powerful";
     System.out.println(TextProcessor.countWords(sentence));
     System.out.println(TextProcessor.replaceWord(sentence,"Java","programming"));
+
+    String text = "John";
+    System.out.println(GradeManager.reverseStudentNames(text));
              }
     }
