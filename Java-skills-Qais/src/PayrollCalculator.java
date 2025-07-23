@@ -5,7 +5,7 @@ public class PayrollCalculator {
 
 
     public PayrollCalculator(String employeeType, double hoursWorked, double hourlyRate) {
-        if (employeeType.equals("FULL_TIME") || employeeType.equals("PART_TIME") || employeeType.equals("CONTRACTOR") || employeeType.equals("INTERN")) {
+        if (employeeType.equals("FULL_TIME") || employeeType.equals("PART_TIME") || employeeType.equals("CONTRACTOR") || employeeType.equals("INTERN")) { //ensure only accepted employee types are taken
             _employeeType = employeeType;
         } else {
             System.out.println("Invalid employee type");
@@ -17,7 +17,7 @@ public class PayrollCalculator {
                     _hoursWorked = hoursWorked;
                     _hourlyRate = hourlyRate;
                 } else {
-                    System.out.println("Invalid value for hours worked or hourly rate");
+                    System.out.println("Invalid value for hours worked or hourly rate"); //ensure no negative values
                 }
                 break;
             case "PART_TIME":
@@ -54,7 +54,10 @@ public class PayrollCalculator {
             case "FULL_TIME":
                 if (_hoursWorked > 40) {
                     double overtime = _hoursWorked - 40;
-                    weeklyPay = (40 * _hourlyRate + overtime * _hourlyRate * 1.5);
+                    weeklyPay = (40 * _hourlyRate + overtime * _hourlyRate * 1.5); //calculate overtime
+                }
+                else{
+                    weeklyPay = (_hoursWorked * _hoursWorked);
                 }
                 break;
             case "PART_TIME":
@@ -99,7 +102,7 @@ public class PayrollCalculator {
     }
 
     public static void processPayroll(String[] employeeTypes, double[] Hours, double[] Rates, String[] Names){
-        PayrollCalculator[] payrolls = new PayrollCalculator[employeeTypes.length];
+        PayrollCalculator[] payrolls = new PayrollCalculator[employeeTypes.length]; //save all arrays into one payroll object
         for (int i =0; i < employeeTypes.length; i++){
             payrolls[i] = new PayrollCalculator(employeeTypes[i],Hours[i],Rates[i]);
             System.out.println("Employee: " + Names[i]);
